@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Herói</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Classificador de Herói</h1>
+            <p class="subtitle">Descubra o nível do seu herói baseado na experiência acumulada</p>
+        </div>
+
+        <div class="content">
+            <div class="form-section">
+                <div class="section">
+                    <h2 class="section-title">Dados do Herói</h2>
+                    
+                    <div class="form-group">
+                       
+                        <div class="input-group">
+                            <label for="heroName" class="label">Nome do Herói</label>
+                            <input 
+                                type="text" 
+                                id="heroName" 
+                                class="input" 
+                                placeholder="Digite o nome do herói..." >
+                            <div id="nameError" class="error hidden"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="heroXP" class="label">Experiência (XP)</label>
+                            <input 
+                                type="number" 
+                                id="heroXP" 
+                                class="input" 
+                                placeholder="0" 
+                                min="0"
+                            >
+                            <div id="xpError" class="error hidden"></div>
+                        </div>
+
+                        <div class="button-group">
+                            <button id="classifyBtn" class="btn btn-primary">Classificar Herói</button>
+                            <button id="clearBtn" class="btn btn-secondary">Limpar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resultSection" class="result-section hidden">
+                    <div class="result-content">
+                        <div id="levelBadge" class="level-badge"></div>
+                        <p id="resultMessage" class="result-message"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-guide">
+                <h2 class="section-title">Tabela de Níveis</h2>
+                
+                <div class="level-list">
+                    <div class="level-item" data-level="ferro">
+                        <div class="level-info">
+                            <div class="level-icon level-ferro">🛡️</div>
+                            <span class="level-name">Ferro</span>
+                        </div>
+                        <span class="level-range">0 - 1.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="bronze">
+                        <div class="level-info">
+                            <div class="level-icon level-bronze">🥉</div>
+                            <span class="level-name">Bronze</span>
+                        </div>
+                        <span class="level-range">1.001 - 2.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="prata">
+                        <div class="level-info">
+                            <div class="level-icon level-prata">🥈</div>
+                            <span class="level-name">Prata</span>
+                        </div>
+                        <span class="level-range">2.001 - 5.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="ouro">
+                        <div class="level-info">
+                            <div class="level-icon level-ouro">🥇</div>
+                            <span class="level-name">Ouro</span>
+                        </div>
+                        <span class="level-range">5.001 - 7.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="platina">
+                        <div class="level-info">
+                            <div class="level-icon level-platina">⭐</div>
+                            <span class="level-name">Platina</span>
+                        </div>
+                        <span class="level-range">7.001 - 8.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="ascendente">
+                        <div class="level-info">
+                            <div class="level-icon level-ascendente">🚀</div>
+                            <span class="level-name">Ascendente</span>
+                        </div>
+                        <span class="level-range">8.001 - 9.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="imortal">
+                        <div class="level-info">
+                            <div class="level-icon level-imortal">🔥</div>
+                            <span class="level-name">Imortal</span>
+                        </div>
+                        <span class="level-range">9.001 - 10.000 XP</span>
+                    </div>
+                    
+                    <div class="level-item" data-level="radiante">
+                        <div class="level-info">
+                            <div class="level-icon level-radiante">☀️</div>
+                            <span class="level-name">Radiante</span>
+                        </div>
+                        <span class="level-range">10.001+ XP</span>
+                    </div>
+                </div>
+
+                <div class="tip-section">
+                    <p class="tip-text">
+                        Cada nível representa marcos importantes na jornada de um herói. 
+                        Continue ganhando experiência para alcançar o lendário nível <strong>Radiante</strong>!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
